@@ -2,3 +2,4 @@ emacs-backup/*
 cider-history
 places
 eshell/history
+.smex-items
