@@ -137,6 +137,10 @@ Position the cursor at it's beginning, according to the current mode."
   "c" 'comment-or-uncomment-region-or-line
   )
 
+;; evil-matchit
+(require 'evil-matchit)
+(global-evil-matchit-mode 1)
+
 ;; keep searches until new search
 (require 'evil-search-highlight-persist)
 (global-evil-search-highlight-persist t)
