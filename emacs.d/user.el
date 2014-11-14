@@ -127,6 +127,14 @@ Position the cursor at it's beginning, according to the current mode."
   "C-T" 'textmate-clear-cache
   "u" 'undo-tree-visualize
   "." 'evil-search-highlight-persist-remove-all
+  "x" 'helm-M-x
+  "h" 'dired-jump
+  "v" 'split-window-right
+  "," 'other-window
+  "s" 'pp-eval-last-sexp
+  "w" 'save-buffer
+  "q" 'kill-buffer-and-window
+  "c" 'comment-or-uncomment-region-or-line
   )
 
 ;; keep searches until new search
@@ -135,8 +143,9 @@ Position the cursor at it's beginning, according to the current mode."
 
 
 ;; expand region
-(eval-after-load "evil" '(setq expand-region-contract-fast-key "z"))
-(evil-leader/set-key "xx" 'er/expand-region)
+(eval-after-load "evil" '(setq expand-region-contract-fast-key "x"))
+(evil-leader/set-key "zz" 'er/expand-region)
+
 
 ;; turn off visual bell
 (setq ring-bell-function 'ignore)
