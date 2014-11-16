@@ -127,15 +127,20 @@ Position the cursor at it's beginning, according to the current mode."
   "C-T" 'textmate-clear-cache
   "u" 'undo-tree-visualize
   "." 'evil-search-highlight-persist-remove-all
-  "x" 'helm-M-x
+  "x" 'smex
   "h" 'dired-jump
   "v" 'split-window-right
+  "k" 'ido-kill-buffer
   "," 'other-window
   "s" 'pp-eval-last-sexp
   "w" 'save-buffer
   "q" 'kill-buffer-and-window
   "c" 'comment-or-uncomment-region-or-line
   )
+
+;; evil-matchit
+(require 'evil-matchit)
+(global-evil-matchit-mode 1)
 
 ;; keep searches until new search
 (require 'evil-search-highlight-persist)
