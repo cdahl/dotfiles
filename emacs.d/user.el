@@ -101,9 +101,14 @@ Position the cursor at it's beginning, according to the current mode."
 
 
 (define-key evil-normal-state-map [S-return] 'smart-open-line-above)
+(define-key evil-insert-state-map [S-return] (lambda () (interactive) (end-of-line) (newline-and-indent)))
+
 
 (global-undo-tree-mode 1)
 (define-key evil-normal-state-map "\C-r" 'undo-tree-redo) ;that got overwritten and i need it!
+(setq undo-tree-auto-save-history t
+      undo-tree-history-directory-alist `(("." . ,(concat user-emacs-directory "undo"))))
+
 
 ;; evil surround
 (load "~/.emacs.d/vendor/evil-surround")

@@ -5,7 +5,7 @@
   :injections [(require 'vinyasa.inject)
                (require 'alex-and-georges.debug-repl)
                (require 'com.georgejahad.difform)
-               (vinyasa.inject/inject 'clojure.core '>
+               #_(vinyasa.inject/inject 'clojure.core '>
                                       '[[clojure.repl doc source]
                                         [clojure.pprint pprint pp]
                                         [alex-and-georges.debug-repl debug-repl]
