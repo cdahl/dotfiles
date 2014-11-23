@@ -124,7 +124,7 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/bin:$ANDROID_HOME/tools:$PATH
 export NODE_PATH=/usr/local/lib/node_modules
 # export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home"
-export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+export JAVA_HOME=`/usr/libexec/java_home`
 export PATH=$HOME/dotfiles/bin:$HOME/bin/:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin:/usr/local/share/npm/bin:/Applications/Emacs.app/Contents/MacOS/bin:/usr/local/Cellar/ruby193/1.9.3-p547/bin:$PATH:
 
 

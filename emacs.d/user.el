@@ -101,9 +101,14 @@ Position the cursor at it's beginning, according to the current mode."
 
 
 (define-key evil-normal-state-map [S-return] 'smart-open-line-above)
+(define-key evil-insert-state-map [S-return] (lambda () (interactive) (end-of-line) (newline-and-indent)))
+
 
 (global-undo-tree-mode 1)
 (define-key evil-normal-state-map "\C-r" 'undo-tree-redo) ;that got overwritten and i need it!
+(setq undo-tree-auto-save-history t
+      undo-tree-history-directory-alist `(("." . ,(concat user-emacs-directory "undo"))))
+
 
 ;; evil surround
 (load "~/.emacs.d/vendor/evil-surround")
@@ -127,7 +132,20 @@ Position the cursor at it's beginning, according to the current mode."
   "C-T" 'textmate-clear-cache
   "u" 'undo-tree-visualize
   "." 'evil-search-highlight-persist-remove-all
+  "x" 'smex
+  "h" 'dired-jump
+  "v" 'split-window-right
+  "k" 'ido-kill-buffer
+  "," 'other-window
+  "s" 'pp-eval-last-sexp
+  "w" 'save-buffer
+  "q" 'kill-buffer-and-window
+  "c" 'comment-or-uncomment-region-or-line
   )
+
+;; evil-matchit
+(require 'evil-matchit)
+(global-evil-matchit-mode 1)
 
 ;; keep searches until new search
 (require 'evil-search-highlight-persist)
@@ -135,8 +153,9 @@ Position the cursor at it's beginning, according to the current mode."
 
 
 ;; expand region
-(eval-after-load "evil" '(setq expand-region-contract-fast-key "z"))
-(evil-leader/set-key "xx" 'er/expand-region)
+(eval-after-load "evil" '(setq expand-region-contract-fast-key "x"))
+(evil-leader/set-key "zz" 'er/expand-region)
+
 
 ;; turn off visual bell
 (setq ring-bell-function 'ignore)

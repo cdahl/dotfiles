@@ -52,11 +52,11 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # defaults write com.apple.screencapture location ~/Desktop/Screenshots/
 # killall SystemUIServer
 
-echo "Finder: disable window animations and Get Info animations"
-defaults write com.apple.finder DisableAllAnimations -bool true
+# echo "Finder: disable window animations and Get Info animations"
+# defaults write com.apple.finder DisableAllAnimations -bool true
 
-echo "Finder: show hidden files by default"
-defaults write com.apple.finder AppleShowAllFiles -bool true
+# echo "Finder: show hidden files by default"
+# defaults write com.apple.finder AppleShowAllFiles -bool true
 
 echo "Finder: show all filename extensions"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -78,10 +78,10 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 echo "Disable “natural” (Lion-style) scrolling"
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
-echo "Set a blazingly fast keyboard repeat rate.. or not"
+# echo "Set a blazingly fast keyboard repeat rate.. or not"
 # defaults write NSGlobalDomain KeyRepeat -int 1
 
-echo "Set a shorter Delay until key repeat."
+# echo "Set a shorter Delay until key repeat."
 # defaults write NSGlobalDomain InitialKeyRepeat -int 1
 
 echo "Increase window resize speed for Cocoa applications."
@@ -101,9 +101,9 @@ defaults write com.apple.frameworks.diskimages skip-verify -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
-echo "Automatically open a new Finder window when a volume is mounted."
-defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
-defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+# echo "Automatically open a new Finder window when a volume is mounted."
+# defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+# defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 
 echo "Display full POSIX path as Finder window title."
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
