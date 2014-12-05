@@ -40,8 +40,6 @@
 (show-paren-mode 1)
 
 
-;; rainbow parens!
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 ;; stronger colors
 (require 'cl-lib)
 (require 'color)
@@ -52,6 +50,10 @@
  do
  (let ((face (intern (format "rainbow-delimiters-depth-%d-face" index))))
    (cl-callf color-saturate-name (face-foreground face) 30)))
+
+
+;; rainbow parens!
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 
 ;; Flyspell often slows down editing so it's turned off
