@@ -11,7 +11,7 @@
                                         [alex-and-georges.debug-repl debug-repl]
                                         [com.georgejahad.difform difform]])]
   :plugins [[lein-try "0.4.3"]
-            [cider/cider-nrepl "0.8.0-SNAPSHOT"]
+            [cider/cider-nrepl "0.8.1"]
             [lein-ancient "0.5.5"]
             [lein-plz "0.3.0" :exclusions [[rewrite-clj] [ancient-clj]]]
             [lein-exec "0.3.4"]
