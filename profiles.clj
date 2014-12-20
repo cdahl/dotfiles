@@ -15,4 +15,5 @@
             [lein-ancient "0.5.5"]
             [lein-plz "0.3.0" :exclusions [[rewrite-clj] [ancient-clj]]]
             [lein-exec "0.3.4"]
+            [lein-drip "0.1.1-SNAPSHOT"]
             [ragtime/ragtime.lein "0.3.7"]]}}
