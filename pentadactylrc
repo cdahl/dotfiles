@@ -1,10 +1,14 @@
 "Misc
-noremap jk <Esc>
+:map -builtin jk <Esc>
 
 "Scroll
 map -count -description='Scrolls 6 lines Down.' -modes=n j -builtin <count>8j
 map -count -description='Scrolls 6 lines UP' -modes=n k -builtin <count>8k
 
+
+" Console toggle
+nmap -builtin <c-g> <m-a-k><esc>
+imap -builtin <c-g> <esc><m-a-k><esc>
 
 "
 set findcase=smart
@@ -19,3 +23,4 @@ nmap -builtin ,p :pocket<CR>
 nmap -builtin ,m :mail<CR>
 nmap -builtin ,r :rss:<CR>
 
+" vim: set ft=vim
