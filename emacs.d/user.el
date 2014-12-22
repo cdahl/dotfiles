@@ -6,6 +6,8 @@
     (setenv "PATH" path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 
+(add-to-list 'exec-path "/usr/local/bin")
+
 ;; Uncomment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
 ;; (in lines high) Emacs will have whenever you start it
@@ -28,6 +30,8 @@
 ;;(load-theme 'tomorrow-night-bright t)
 (load-theme 'obsidian t)
 
+;; show the menu bar
+(menu-bar-mode t)
 
 
 
@@ -40,8 +44,6 @@
 (show-paren-mode 1)
 
 
-;; rainbow parens!
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 ;; stronger colors
 (require 'cl-lib)
 (require 'color)
@@ -54,13 +56,16 @@
    (cl-callf color-saturate-name (face-foreground face) 30)))
 
 
+;; rainbow parens!
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+
 ;; Flyspell often slows down editing so it's turned off
-(remove-hook 'text-mode-hook 'turn-on-flyspell)
+;;(remove-hook 'text-mode-hook 'turn-on-flyspell)
 
-;;(set-frame-font "Source Code Pro")
+(set-frame-font "Source Code Pro")
 
 
-(load "~/.emacs.d/vendor/clojure")
 
 ;; hippie expand - don't try to complete with file names
 (setq hippie-expand-try-functions-list (delete 'try-complete-file-name hippie-expand-try-functions-list))
@@ -151,6 +156,7 @@ Position the cursor at it's beginning, according to the current mode."
 (require 'evil-search-highlight-persist)
 (global-evil-search-highlight-persist t)
 
+(load "~/.emacs.d/vendor/clojure")
 
 ;; expand region
 (eval-after-load "evil" '(setq expand-region-contract-fast-key "x"))
@@ -227,6 +233,44 @@ Position the cursor at it's beginning, according to the current mode."
 
 ;; Clojure config!
 (setq cider-auto-select-error-buffer nil)
+(setq cider-show-error-buffer 'except-in-repl)
+
+;; something else overrode it :(
+(eval-after-load 'clojure-mode
+  '(progn
+     ;; don't override clojure-mode mappings (mostly M-.)
+     (evil-make-overriding-map clojure-mode-map nil t)))
+
+
+;; Append result of evaluating previous expression (Clojure):
+(defun cider-eval-last-sexp-and-append ()
+  "Evaluate the expression preceding point and append result."
+  (interactive)
+  (let ((last-sexp (cider-last-sexp)))
+    ;; we have to be sure the evaluation won't result in an error
+    (cider-eval-and-get-value last-sexp)
+    (with-current-buffer (current-buffer)
+      (insert ";;=>"))
+    (cider-interactive-eval-print last-sexp)))
+
+(eval-after-load 'cider-mode
+  '(progn
+     (define-key cider-mode-map (kbd "s-i") 'cider-jump-to-var)
+     (define-key cider-mode-map (kbd "s-e") 'cider-eval-last-sexp-and-append)
+     ))
+
+(evil-define-key 'normal cider-mode (kbd "s-i") 'cider-doc)
+
+(evil-define-key 'insert cider-mode (kbd "s-i") 'cider-doc)
+
+
+;; Clojure-Refactor
+(require 'clj-refactor)
+(add-hook 'clojure-mode-hook (lambda ()
+                               (clj-refactor-mode 1)
+                               ;; insert keybinding setup here
+                               (cljr-add-keybindings-with-prefix "C-c C-m")
+                               ))
 
 ;; Autocomplete
 (require 'auto-complete-config)
@@ -429,3 +473,4 @@ This function is only necessary in window system."
 ;; SQL
 (add-hook 'sql-mode-hook 'sqlup-mode)
 (add-hook 'sql-interactive-mode-hook 'sqlup-mode)
+

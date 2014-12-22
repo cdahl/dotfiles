@@ -3,9 +3,9 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil "evil-visualstar" "evil-visualstar.el" (21580
-;;;;;;  20326 0 0))
-;;; Generated autoloads from evil-visualstar.el
+;;;### (autoloads nil "evil-visualstar" "../../../../.emacs.d/elpa/evil-visualstar-20130925.1114/evil-visualstar.el"
+;;;;;;  "580b1a10a69b174d520b2af69fa87d8f")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/evil-visualstar-20130925.1114/evil-visualstar.el
 
 (autoload 'evil-visualstar/begin-search "evil-visualstar" "\
 
@@ -21,6 +21,12 @@ Search for the visual selection forwards.
 Search for the visual selection backwards.
 
 \(fn BEG END)" t nil)
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/evil-visualstar-20130925.1114/evil-visualstar-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/evil-visualstar-20130925.1114/evil-visualstar.el")
+;;;;;;  (21656 7171 326744 0))
 
 ;;;***
 
