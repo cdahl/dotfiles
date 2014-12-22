@@ -237,18 +237,40 @@ Position the cursor at it's beginning, according to the current mode."
 
 ;; something else overrode it :(
 (eval-after-load 'clojure-mode
-          '(progn
-			;; don't override clojure-mode mappings (mostly M-.)
-			(evil-make-overriding-map clojure-mode-map nil t)))
+  '(progn
+     ;; don't override clojure-mode mappings (mostly M-.)
+     (evil-make-overriding-map clojure-mode-map nil t)))
+
+
+;; Append result of evaluating previous expression (Clojure):
+(defun cider-eval-last-sexp-and-append ()
+  "Evaluate the expression preceding point and append result."
+  (interactive)
+  (let ((last-sexp (cider-last-sexp)))
+    ;; we have to be sure the evaluation won't result in an error
+    (cider-eval-and-get-value last-sexp)
+    (with-current-buffer (current-buffer)
+      (insert ";;=>"))
+    (cider-interactive-eval-print last-sexp)))
 
 (eval-after-load 'cider-mode
-          '(progn
-			;; don't override clojure-mode mappings (mostly M-.)
-			(evil-make-overriding-map cider-mode-map nil t)))
+  '(progn
+     (define-key cider-mode-map (kbd "s-i") 'cider-jump-to-var)
+     (define-key cider-mode-map (kbd "s-e") 'cider-eval-last-sexp-and-append)
+     ))
 
-(evil-define-key 'normal cider-mode (kbd "M-.") 'cider-jump-to-var)
-(evil-define-key 'insert cider-mode (kbd "M-.") 'cider-jump-to-var)
+(evil-define-key 'normal cider-mode (kbd "s-i") 'cider-doc)
 
+(evil-define-key 'insert cider-mode (kbd "s-i") 'cider-doc)
+
+
+;; Clojure-Refactor
+(require 'clj-refactor)
+(add-hook 'clojure-mode-hook (lambda ()
+                               (clj-refactor-mode 1)
+                               ;; insert keybinding setup here
+                               (cljr-add-keybindings-with-prefix "C-c C-m")
+                               ))
 
 ;; Autocomplete
 (require 'auto-complete-config)

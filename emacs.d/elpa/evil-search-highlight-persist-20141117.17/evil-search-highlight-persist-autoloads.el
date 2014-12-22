@@ -3,9 +3,9 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil "evil-search-highlight-persist" "evil-search-highlight-persist.el"
-;;;;;;  (21627 9232 0 0))
-;;; Generated autoloads from evil-search-highlight-persist.el
+;;;### (autoloads nil "evil-search-highlight-persist" "../../../../.emacs.d/elpa/evil-search-highlight-persist-20141117.17/evil-search-highlight-persist.el"
+;;;;;;  "4a9ccdeab31277cd28f910cfdb866f54")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/evil-search-highlight-persist-20141117.17/evil-search-highlight-persist.el
 
 (defvar evil-search-highlight-persist nil "\
 Non-nil if Evil-Search-Highlight-Persist mode is enabled.
@@ -51,6 +51,12 @@ Evil-Search-Highlight-Persist mode is enabled in all buffers where
 See `evil-search-highlight-persist' for more information on Evil-Search-Highlight-Persist mode.
 
 \(fn &optional ARG)" t nil)
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/evil-search-highlight-persist-20141117.17/evil-search-highlight-persist-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/evil-search-highlight-persist-20141117.17/evil-search-highlight-persist.el")
+;;;;;;  (21656 7625 843842 0))
 
 ;;;***
 

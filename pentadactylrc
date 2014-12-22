@@ -5,6 +5,10 @@ noremap jk <Esc>
 map -count -description='Scrolls 6 lines Down.' -modes=n j -builtin <count>8j
 map -count -description='Scrolls 6 lines UP' -modes=n k -builtin <count>8k
 
+"keyboard hints
+set hintkeys=asdflkj
+hi -a Hint font-size: 9pt !important;
+
 
 "
 set findcase=smart
