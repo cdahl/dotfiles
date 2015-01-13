@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# README: 
+# Install deps: brew install imagemagic ghostscript
+# Generate types: http://www.imagemagick.org/Usage/scripts/imagick_type_gen ==> imagick_type_gen > ~/.magick/type.xml
+
 USAGE="Usage: `basename $0` text image1 image2 .."
 
 if [ "$#" == "0" ]; then
