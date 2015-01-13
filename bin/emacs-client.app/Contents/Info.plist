@@ -26,11 +26,11 @@
 	<key>CFBundleIconFile</key>
 	<string>droplet</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.apple.ScriptEditor.id.emacs-client-d-d</string>
+	<string>com.apple.ScriptEditor.id.emacs-client</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>emacs-client d&amp;d</string>
+	<string>emacs-client</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -59,7 +59,7 @@
 		<key>positionOfDivider</key>
 		<real>421</real>
 		<key>savedFrame</key>
-		<string>50 178 942 672 0 0 2560 1417 </string>
+		<string>178 286 1003 672 0 0 2560 1417 </string>
 		<key>selectedTab</key>
 		<string>result</string>
 	</dict>
