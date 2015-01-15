@@ -20,6 +20,8 @@ alias G="|ag -S "
 alias mkdir='mkdir -p'
 alias ag="ag -S"
 alias duh='du -sh *'
+alias px='ps ax'
+alias pg='ps ax|ack'
 
 alias -g H='| head'
 alias -g T='| tail'
