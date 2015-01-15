@@ -1,0 +1,3 @@
+#!/bin/sh
+
+open "$(find -E . -regex ".*\.(flv|mpeg|mpg|mov|avi|mp4|wmv|mkv)"|gsort -R|head -n 1)"
