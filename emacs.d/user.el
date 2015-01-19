@@ -474,3 +474,47 @@ This function is only necessary in window system."
 (add-hook 'sql-mode-hook 'sqlup-mode)
 (add-hook 'sql-interactive-mode-hook 'sqlup-mode)
 
+
+
+;; jabber
+;;================================================================================ 
+
+(defun get-string-from-file (filePath)
+  "Return filePath's file content."
+  (with-temp-buffer
+    (insert-file-contents filePath)
+    (buffer-string)))
+
+
+(defun chomp (str)
+  "Chomp leading and tailing whitespace from STR."
+  (replace-regexp-in-string (rx (or (: bos (* (any " \t\n")))
+                                    (: (* (any " \t\n")) eos)))
+                            ""
+                            str))
+
+(setq jabber-account-list 
+      `(("mgerlach@klick.com"
+         (:password . ,(chomp (get-string-from-file "~/.jabberpasswd")))
+         (:network-server . "talk.google.com")
+         (:connection-type . ssl)
+         (:port . 443))))
+
+;; use history
+(setq jabber-history-enabled t
+      jabber-use-global-history nil
+      jabber-backlog-number 4 
+      jabber-backlog-days 3000)
+
+;; don't notify on status
+(setq jabber-alert-presence-message-function (lambda (who oldstatus newstatus statustext) nil))
+
+;; i don't care about presence and offline
+(setq jabber-alert-presence-hooks nil
+      jabber-show-offline-contacts nil)
+
+;;Automatically highlight URLs
+;;Here’s a hook which will highlight URLs, and bind C-c RET to open the URL using browse-url
+(add-hook 'jabber-chat-mode-hook 'goto-address)
+
+

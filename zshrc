@@ -52,6 +52,7 @@ alias cpla="cordova plugin add"
 alias cplr="cordova plugin remove"
 alias adbcordova="noglob adb logcat CordovaLog:V *:S"
 alias simlog="noglob tail -f $HOME/Library/Logs/iOS\ Simulator/$(cut -d/ -f7 <<< $(ps ax|grep "iPhone Simulator/"|grep app))/system.log"
+alias apkinfo="aapt dump badging"
 
 
 alias gmtdate="date -u  +\"%Y-%m-%d %T\""
