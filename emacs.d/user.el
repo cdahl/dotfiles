@@ -522,6 +522,9 @@ This function is only necessary in window system."
       jabber-backlog-days 14 ; show messages from last 14 days
       )
 
+(setq jabber-avatar-cache-directory "~/.jabber/jabber-avatar-cache"
+      jabber-history-dir "~/.jabber/jabber-history")
+
 ;; don't notify on status
 (setq jabber-alert-presence-message-function (lambda (who oldstatus newstatus statustext) nil))
 
