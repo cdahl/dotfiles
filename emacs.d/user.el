@@ -517,7 +517,7 @@ This function is only necessary in window system."
 
 ;; use history
 (setq jabber-history-enabled t
-      jabber-use-global-history t
+      jabber-use-global-history nil ;per contact history
       jabber-backlog-number 10 ;show 10 last messages 
       jabber-backlog-days 14 ; show messages from last 14 days
       )
