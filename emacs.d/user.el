@@ -340,10 +340,25 @@ Position the cursor at it's beginning, according to the current mode."
 
 (windmove-default-keybindings) ;Then you can use SHIFT+arrow to move to the next adjacent window in the specified direction.
 
+;;move border!
+(load "~/.emacs.d/vendor/move-border" )
+(require 'move-border)
+(global-set-key (kbd "M-S-<up>") 'move-border-up)
+(global-set-key (kbd "M-S-<down>") 'move-border-down)
+(global-set-key (kbd "M-S-<left>") 'move-border-left)
+(global-set-key (kbd "M-S-<right>") 'move-border-right)
+
+
+
+;;move text
+(require 'move-line)
+;;C-S-up/down
+
+
+
 (global-aggressive-indent-mode)
 
 (delete-selection-mode t) ;;overwrite selection by default. Thank God!
-
 
 
 

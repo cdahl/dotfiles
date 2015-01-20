@@ -1,1 +1,5 @@
 ["2015-01-15T18:31:53Z" "in" "1ysccdxogv6vl0rryj9d7oagd0@public.talk.google.com/lcsw_hangoutsD485256F" "me" "catherine is here"]
+["2015-01-20T19:04:01Z" "in" "1ysccdxogv6vl0rryj9d7oagd0@public.talk.google.com/lcsw_hangoutsF3C48368" "me" "busy?"]
+["2015-01-20T19:04:11Z" "out" "me" "1ysccdxogv6vl0rryj9d7oagd0@public.talk.google.com/lcsw_hangoutsF3C48368" "Sorry, didn't see the message"]
+["2015-01-20T19:04:22Z" "out" "me" "1ysccdxogv6vl0rryj9d7oagd0@public.talk.google.com/lcsw_hangoutsF3C48368" "I had tester but the dick didn't show up"]
+["2015-01-20T19:04:24Z" "out" "me" "1ysccdxogv6vl0rryj9d7oagd0@public.talk.google.com/lcsw_hangoutsF3C48368" "I\"m coming over"]

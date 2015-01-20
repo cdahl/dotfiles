@@ -12,3 +12,8 @@
 ["2015-01-19T19:10:21Z" "out" "me" "1plg12oguwfko2k3j4j8ys678v@public.talk.google.com" "Well at this point I consider him a no-show and will get a coffee"]
 ["2015-01-19T19:10:33Z" "out" "me" "1plg12oguwfko2k3j4j8ys678v@public.talk.google.com" "at least I won't have to wait for him to finish then"]
 ["2015-01-19T19:10:43Z" "in" "1plg12oguwfko2k3j4j8ys678v@public.talk.google.com/lcsw_hangoutsFAD7CEBB" "me" "lol exactly"]
+["2015-01-20T18:35:48Z" "in" "1plg12oguwfko2k3j4j8ys678v@public.talk.google.com/lcsw_hangouts04EF4DFF" "me" "sorry just got back from lunch...who were you waiting for?"]
+["2015-01-20T18:36:22Z" "in" "1plg12oguwfko2k3j4j8ys678v@public.talk.google.com/lcsw_hangouts04EF4DFF" "me" "no show again 👎"]
+["2015-01-20T18:36:53Z" "out" "me" "1plg12oguwfko2k3j4j8ys678v@public.talk.google.com" "What the hell is wrong with people?!"]
+["2015-01-20T18:41:45Z" "in" "1plg12oguwfko2k3j4j8ys678v@public.talk.google.com/lcsw_hangouts04EF4DFF" "me" "lol so rude of people"]
+["2015-01-20T18:41:56Z" "out" "me" "1plg12oguwfko2k3j4j8ys678v@public.talk.google.com" "yeah"]
