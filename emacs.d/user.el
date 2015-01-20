@@ -517,9 +517,10 @@ This function is only necessary in window system."
 
 ;; use history
 (setq jabber-history-enabled t
-      jabber-use-global-history nil
-      jabber-backlog-number 4 
-      jabber-backlog-days 3000)
+      jabber-use-global-history t
+      jabber-backlog-number 10 ;show 10 last messages 
+      jabber-backlog-days 14 ; show messages from last 14 days
+      )
 
 ;; don't notify on status
 (setq jabber-alert-presence-message-function (lambda (who oldstatus newstatus statustext) nil))
