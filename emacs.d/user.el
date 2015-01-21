@@ -294,7 +294,7 @@ Position the cursor at it's beginning, according to the current mode."
 
 ;; scrolling
 
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-scroll-amount '(2 ((shift) . 1))) ;; one line at a time
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 (setq scroll-step 1) ;; keyboard scroll one line at a time
@@ -481,17 +481,23 @@ This function is only necessary in window system."
 
 (defun get-string-from-file (filePath)
   "Return filePath's file content."
-  (with-temp-buffer
-    (insert-file-contents filePath)
-    (buffer-string)))
+  (if (file-exists-p filePath)
+      (with-temp-buffer
+        (insert-file-contents filePath)
+        (buffer-string))
+    nil))
 
 
 (defun chomp (str)
   "Chomp leading and tailing whitespace from STR."
-  (replace-regexp-in-string (rx (or (: bos (* (any " \t\n")))
-                                    (: (* (any " \t\n")) eos)))
-                            ""
-                            str))
+  (if str
+      (replace-regexp-in-string (rx (or (: bos (* (any " \t\n")))
+                                        (: (* (any " \t\n")) eos)))
+                                ""
+                                str)
+    nil))
+
+
 
 (setq jabber-account-list 
       `(("mgerlach@klick.com"
