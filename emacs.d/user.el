@@ -340,10 +340,25 @@ Position the cursor at it's beginning, according to the current mode."
 
 (windmove-default-keybindings) ;Then you can use SHIFT+arrow to move to the next adjacent window in the specified direction.
 
+;;move border!
+(load "~/.emacs.d/vendor/move-border" )
+(require 'move-border)
+(global-set-key (kbd "M-S-<up>") 'move-border-up)
+(global-set-key (kbd "M-S-<down>") 'move-border-down)
+(global-set-key (kbd "M-S-<left>") 'move-border-left)
+(global-set-key (kbd "M-S-<right>") 'move-border-right)
+
+
+
+;;move text
+(require 'move-line)
+;;C-S-up/down
+
+
+
 (global-aggressive-indent-mode)
 
 (delete-selection-mode t) ;;overwrite selection by default. Thank God!
-
 
 
 
@@ -508,9 +523,13 @@ This function is only necessary in window system."
 
 ;; use history
 (setq jabber-history-enabled t
-      jabber-use-global-history nil
-      jabber-backlog-number 4 
-      jabber-backlog-days 3000)
+      jabber-use-global-history nil ;per contact history
+      jabber-backlog-number 10 ;show 10 last messages 
+      jabber-backlog-days 14 ; show messages from last 14 days
+      )
+
+(setq jabber-avatar-cache-directory "~/.jabber/jabber-avatar-cache"
+      jabber-history-dir "~/.jabber/jabber-history")
 
 ;; don't notify on status
 (setq jabber-alert-presence-message-function (lambda (who oldstatus newstatus statustext) nil))
