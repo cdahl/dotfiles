@@ -343,10 +343,10 @@ Position the cursor at it's beginning, according to the current mode."
 ;;move border!
 (load "~/.emacs.d/vendor/move-border" )
 (require 'move-border)
-(global-set-key (kbd "M-S-<up>") 'move-border-up)
-(global-set-key (kbd "M-S-<down>") 'move-border-down)
-(global-set-key (kbd "M-S-<left>") 'move-border-left)
-(global-set-key (kbd "M-S-<right>") 'move-border-right)
+(global-set-key (kbd "s-<up>") 'move-border-up)
+(global-set-key (kbd "s-<down>") 'move-border-down)
+(global-set-key (kbd "s-<left>") 'move-border-left)
+(global-set-key (kbd "s-<right>") 'move-border-right)
 
 
 
@@ -548,3 +548,9 @@ This function is only necessary in window system."
 
 (setq indent-guide-char "\u2502")
 
+
+
+
+
+;; scroll-offset
+(setq scroll-margin 2)
