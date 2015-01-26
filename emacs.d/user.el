@@ -260,7 +260,6 @@ Position the cursor at it's beginning, according to the current mode."
      ))
 
 (evil-define-key 'normal cider-mode (kbd "s-i") 'cider-doc)
-
 (evil-define-key 'insert cider-mode (kbd "s-i") 'cider-doc)
 
 
@@ -273,12 +272,20 @@ Position the cursor at it's beginning, according to the current mode."
                                ))
 
 ;; Autocomplete
-(require 'auto-complete-config)
-(ac-config-default)
-(setq ac-use-fuzzy 1)
-(setq ac-auto-start 1)
-(setq ac-quick-help-delay 0.5)
+;; (require 'auto-complete-config)
+;; (ac-config-default)
+;; (setq ac-use-fuzzy 1)
+;; (setq ac-auto-start 1)
+;; (setq ac-quick-help-delay 0.5)
 
+(global-company-mode)
+(add-hook 'after-init-hook 'global-company-mode)
+(global-set-key "\t" 'company-complete-common) ;force auto-complete instead of waiting for the timer
+(setq company-dabbrev-downcase nil ;don't dowcase. Stupid idea.
+      company-show-numbers t
+      company-transformers '(company-sort-by-occurrence)) 
+
+(push 'company-capf company-backends)
 
 ;;(frame-restore-mode)
 ;;(desktop-save-mode)
@@ -451,7 +458,6 @@ This function is only necessary in window system."
 ;; better fill column
 (setq-default fill-column 160)
 
-(global-company-mode)
 
 ;; scrolling
 ;; (require 'smooth-scrolling)

@@ -31,7 +31,8 @@ alias -g M='| less'
 alias -g W='| wc -l'
 alias -g X='| xargs'
 
-alias zshrc='mvim ~/.zshrc' # Quick access to the ~/.zshrc file
+alias zshrc='e ~/.zshrc' # Quick access to the ~/.zshrc file
+alias userel='e ~/.emacs.d/user.el' # Quick access to the ~/.zshrc file
 
 function fm {
 	noglob ag --smart-case -g "$@"|head -1 |xargs mvim
@@ -40,6 +41,10 @@ function fm {
 function gitignore {
 	echo "$@" >> "./.gitignore"
 	git rm --cached $@
+}
+
+function xcode {
+	open
 }
 
 ### cordova
