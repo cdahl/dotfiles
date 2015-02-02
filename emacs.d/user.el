@@ -16,6 +16,14 @@
 (setq default-frame-alist '((top . 0) (left . 0) (width . 150) (height . 80)))
 
 
+;; UTF-8 ALL THE THINGS!
+(prefer-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(setenv "LANG" "en_CA.UTF-8")
+(setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
+
 
 ;; shell scripts
 (setq-default sh-basic-offset 2)
