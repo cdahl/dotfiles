@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        evil-append-line
         evil-delete
         evil-delete-char
         evil-force-normal-state
@@ -17,7 +18,9 @@
 (setq mc/cmds-to-run-once
       '(
         evil-backward-char
+        evil-ex
         evil-mouse-drag-region
+        evil-previous-line
         mark-whole-buffer
         mouse-set-region
         smex
