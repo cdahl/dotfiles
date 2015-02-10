@@ -14,6 +14,7 @@ source /usr/local/etc/autojump.zsh #this should really have been in the dictiona
 alias m="mvim"
 alias o="open"
 alias f="open ."
+alias a="ag"
 alias ra="rake"
 alias fl="|ag -S "
 alias G="|ag -S "
@@ -30,6 +31,7 @@ alias -g L="| less"
 alias -g M='| less'
 alias -g W='| wc -l'
 alias -g X='| xargs'
+alias -g P='| '
 
 alias zshrc='e ~/.zshrc' # Quick access to the ~/.zshrc file
 alias userel='e ~/.emacs.d/user.el' # Quick access to the ~/.zshrc file
