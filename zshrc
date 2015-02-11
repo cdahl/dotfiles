@@ -37,16 +37,20 @@ alias zshrc='e ~/.zshrc' # Quick access to the ~/.zshrc file
 alias userel='e ~/.emacs.d/user.el' # Quick access to the ~/.zshrc file
 
 function fm {
-	noglob ag --smart-case -g "$@"|head -1 |xargs mvim
+  noglob ag --smart-case -g "$@"|head -1 |xargs e
 }
 
 function gitignore {
-	echo "$@" >> "./.gitignore"
-	git rm --cached $@
+  echo "$@" >> "./.gitignore"
+  git rm --cached $@
 }
 
 function xcode {
-	open
+  open 
+}
+
+function gcwhitespace {
+  git diff -w --no-color | git apply --cached --ignore-whitespace
 }
 
 ### cordova
