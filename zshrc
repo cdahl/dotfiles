@@ -7,7 +7,8 @@ source $ZSH/oh-my-zsh.sh
 #   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 # fi
 
-source /usr/local/etc/autojump.zsh #this should really have been in the dictionay
+source $(brew --prefix)/etc/profile.d/autojump.sh #this should really have been in the dictionay
+
 
 # !!! search and replace: ag Deafult -l|xargs sed -i '' 's/Deafult/Default/g'
 
