@@ -9,3 +9,8 @@ Source code colour scheme: http://eclipsecolorthemes.org/?view=theme&id=12214
 # VIM anywhere:
 curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/install | bash
 [ https://github.com/cknadler/vim-anywhere ]()
+
+# invert magic trackpad:
+sudo defaults write com.apple.MultitouchSupport ForceAutoOrientation YES
+disconnect/reconnect
+rest five fingers on it so it reorients itself

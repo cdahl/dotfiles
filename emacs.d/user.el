@@ -6,6 +6,8 @@
     (setenv "PATH" path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 
+(add-to-list 'exec-path "/usr/local/bin")
+
 ;; Uncomment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
 ;; (in lines high) Emacs will have whenever you start it
@@ -13,6 +15,14 @@
 (setq initial-frame-alist '((top . 0) (left . 0) (width . 150) (height . 80)))
 (setq default-frame-alist '((top . 0) (left . 0) (width . 150) (height . 80)))
 
+
+;; UTF-8 ALL THE THINGS!
+(prefer-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(setenv "LANG" "en_CA.UTF-8")
+(setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 
 
 ;; shell scripts
@@ -28,6 +38,8 @@
 ;;(load-theme 'tomorrow-night-bright t)
 (load-theme 'obsidian t)
 
+;; show the menu bar
+(menu-bar-mode t)
 
 
 
@@ -40,8 +52,6 @@
 (show-paren-mode 1)
 
 
-;; rainbow parens!
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 ;; stronger colors
 (require 'cl-lib)
 (require 'color)
@@ -54,13 +64,16 @@
    (cl-callf color-saturate-name (face-foreground face) 30)))
 
 
+;; rainbow parens!
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+
 ;; Flyspell often slows down editing so it's turned off
-(remove-hook 'text-mode-hook 'turn-on-flyspell)
+;;(remove-hook 'text-mode-hook 'turn-on-flyspell)
 
-;;(set-frame-font "Source Code Pro")
+(set-frame-font "Source Code Pro")
 
 
-(load "~/.emacs.d/vendor/clojure")
 
 ;; hippie expand - don't try to complete with file names
 (setq hippie-expand-try-functions-list (delete 'try-complete-file-name hippie-expand-try-functions-list))
@@ -82,7 +95,9 @@
 (key-chord-mode 1)
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
 
-(define-key evil-normal-state-map (kbd "q") nil)
+;; (define-key evil-normal-state-map (kbd "q") nil)
+(define-key evil-normal-state-map (kbd "M-.") nil)
+(define-key evil-insert-state-map (kbd "M-.") nil)
 (define-key evil-normal-state-map (kbd "RET") (lambda () (interactive) (end-of-line) (newline-and-indent)))
 (define-key evil-insert-state-map (kbd "C-e") nil)
 (define-key evil-insert-state-map (kbd "C-d") nil)
@@ -151,6 +166,7 @@ Position the cursor at it's beginning, according to the current mode."
 (require 'evil-search-highlight-persist)
 (global-evil-search-highlight-persist t)
 
+(load "~/.emacs.d/vendor/clojure")
 
 ;; expand region
 (eval-after-load "evil" '(setq expand-region-contract-fast-key "x"))
@@ -227,14 +243,59 @@ Position the cursor at it's beginning, according to the current mode."
 
 ;; Clojure config!
 (setq cider-auto-select-error-buffer nil)
+(setq cider-show-error-buffer 'except-in-repl)
+
+;; something else overrode it :(
+(eval-after-load 'clojure-mode
+  '(progn
+     ;; don't override clojure-mode mappings (mostly M-.)
+     (evil-make-overriding-map clojure-mode-map nil t)))
+
+
+;; Append result of evaluating previous expression (Clojure):
+(defun cider-eval-last-sexp-and-append ()
+  "Evaluate the expression preceding point and append result."
+  (interactive)
+  (let ((last-sexp (cider-last-sexp)))
+    ;; we have to be sure the evaluation won't result in an error
+    (cider-eval-and-get-value last-sexp)
+    (with-current-buffer (current-buffer)
+      (insert ";;=>"))
+    (cider-interactive-eval-print last-sexp)))
+
+(eval-after-load 'cider-mode
+  '(progn
+     (define-key cider-mode-map (kbd "s-i") 'cider-jump-to-var)
+     (define-key cider-mode-map (kbd "s-e") 'cider-eval-last-sexp-and-append)
+     ))
+
+(evil-define-key 'normal cider-mode (kbd "s-i") 'cider-doc)
+(evil-define-key 'insert cider-mode (kbd "s-i") 'cider-doc)
+
+
+;; Clojure-Refactor
+(require 'clj-refactor)
+(add-hook 'clojure-mode-hook (lambda ()
+                               (clj-refactor-mode 1)
+                               ;; insert keybinding setup here
+                               (cljr-add-keybindings-with-prefix "C-c C-m")
+                               ))
 
 ;; Autocomplete
-(require 'auto-complete-config)
-(ac-config-default)
-(setq ac-use-fuzzy 1)
-(setq ac-auto-start 1)
-(setq ac-quick-help-delay 0.5)
+;; (require 'auto-complete-config)
+;; (ac-config-default)
+;; (setq ac-use-fuzzy 1)
+;; (setq ac-auto-start 1)
+;; (setq ac-quick-help-delay 0.5)
 
+(global-company-mode)
+(add-hook 'after-init-hook 'global-company-mode)
+(global-set-key "\t" 'company-complete-common) ;force auto-complete instead of waiting for the timer
+(setq company-dabbrev-downcase nil ;don't dowcase. Stupid idea.
+      company-show-numbers t
+      company-transformers '(company-sort-by-occurrence)) 
+
+(push 'company-capf company-backends)
 
 ;;(frame-restore-mode)
 ;;(desktop-save-mode)
@@ -250,7 +311,7 @@ Position the cursor at it's beginning, according to the current mode."
 
 ;; scrolling
 
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-scroll-amount '(2 ((shift) . 1))) ;; one line at a time
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 (setq scroll-step 1) ;; keyboard scroll one line at a time
@@ -296,10 +357,25 @@ Position the cursor at it's beginning, according to the current mode."
 
 (windmove-default-keybindings) ;Then you can use SHIFT+arrow to move to the next adjacent window in the specified direction.
 
+;;move border!
+(load "~/.emacs.d/vendor/move-border" )
+(require 'move-border)
+(global-set-key (kbd "s-<up>") 'move-border-up)
+(global-set-key (kbd "s-<down>") 'move-border-down)
+(global-set-key (kbd "s-<left>") 'move-border-left)
+(global-set-key (kbd "s-<right>") 'move-border-right)
+
+
+
+;;move text
+(require 'move-line)
+;;C-S-up/down
+
+
+
 (global-aggressive-indent-mode)
 
 (delete-selection-mode t) ;;overwrite selection by default. Thank God!
-
 
 
 
@@ -392,7 +468,6 @@ This function is only necessary in window system."
 ;; better fill column
 (setq-default fill-column 160)
 
-(global-company-mode)
 
 ;; scrolling
 ;; (require 'smooth-scrolling)
@@ -429,3 +504,75 @@ This function is only necessary in window system."
 ;; SQL
 (add-hook 'sql-mode-hook 'sqlup-mode)
 (add-hook 'sql-interactive-mode-hook 'sqlup-mode)
+
+
+
+;; jabber
+;;================================================================================ 
+
+(defun get-string-from-file (filePath)
+  "Return filePath's file content."
+  (if (file-exists-p filePath)
+      (with-temp-buffer
+        (insert-file-contents filePath)
+        (buffer-string))
+    nil))
+
+
+(defun chomp (str)
+  "Chomp leading and tailing whitespace from STR."
+  (if str
+      (replace-regexp-in-string (rx (or (: bos (* (any " \t\n")))
+                                        (: (* (any " \t\n")) eos)))
+                                ""
+                                str)
+    nil))
+
+
+
+(setq jabber-account-list 
+      `(("mgerlach@klick.com"
+         (:password . ,(chomp (get-string-from-file "~/.jabberpasswd")))
+         (:network-server . "talk.google.com")
+         (:connection-type . ssl)
+         (:port . 443))))
+
+;; use history
+(setq jabber-history-enabled t
+      jabber-use-global-history nil ;per contact history
+      jabber-backlog-number 10 ;show 10 last messages 
+      jabber-backlog-days 14 ; show messages from last 14 days
+      )
+
+(setq jabber-avatar-cache-directory "~/.jabber/jabber-avatar-cache"
+      jabber-history-dir "~/.jabber/jabber-history")
+
+;; don't notify on status
+(setq jabber-alert-presence-message-function (lambda (who oldstatus newstatus statustext) nil))
+
+;; i don't care about presence and offline
+(setq jabber-alert-presence-hooks nil
+      jabber-show-offline-contacts nil)
+
+;;Automatically highlight URLs
+;;Here’s a hook which will highlight URLs, and bind C-c RET to open the URL using browse-url
+(add-hook 'jabber-chat-mode-hook 'goto-address)
+
+
+;;================================================================================
+;; indentation
+
+(require 'indent-guide)
+(indent-guide-global-mode)
+(setq indent-guide-recursive t)
+(set-face-foreground 'indent-guide-face "#2b547e")
+(set-face-background 'indent-guide-face nil)
+
+(setq indent-guide-char "\u2502")
+
+
+
+
+
+;; scroll-offset
+(setq scroll-margin 2)

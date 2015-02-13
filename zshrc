@@ -14,12 +14,15 @@ source /usr/local/etc/autojump.zsh #this should really have been in the dictiona
 alias m="mvim"
 alias o="open"
 alias f="open ."
+alias a="ag"
 alias ra="rake"
 alias fl="|ag -S "
 alias G="|ag -S "
 alias mkdir='mkdir -p'
 alias ag="ag -S"
 alias duh='du -sh *'
+alias px='ps ax'
+alias pg='ps ax|ack'
 
 alias -g H='| head'
 alias -g T='| tail'
@@ -28,16 +31,26 @@ alias -g L="| less"
 alias -g M='| less'
 alias -g W='| wc -l'
 alias -g X='| xargs'
+alias -g P='| '
 
-alias zshrc='mvim ~/.zshrc' # Quick access to the ~/.zshrc file
+alias zshrc='e ~/.zshrc' # Quick access to the ~/.zshrc file
+alias userel='e ~/.emacs.d/user.el' # Quick access to the ~/.zshrc file
 
 function fm {
-	noglob ag --smart-case -g "$@"|head -1 |xargs mvim
+  noglob ag --smart-case -g "$@"|head -1 |xargs e
 }
 
 function gitignore {
-	echo "$@" >> "./.gitignore"
-	git rm --cached $@
+  echo "$@" >> "./.gitignore"
+  git rm --cached $@
+}
+
+function xcode {
+  open 
+}
+
+function gcwhitespace {
+  git diff -w --no-color | git apply --cached --ignore-whitespace
 }
 
 ### cordova
@@ -50,6 +63,7 @@ alias cpla="cordova plugin add"
 alias cplr="cordova plugin remove"
 alias adbcordova="noglob adb logcat CordovaLog:V *:S"
 alias simlog="noglob tail -f $HOME/Library/Logs/iOS\ Simulator/$(cut -d/ -f7 <<< $(ps ax|grep "iPhone Simulator/"|grep app))/system.log"
+alias apkinfo="aapt dump badging"
 
 
 alias gmtdate="date -u  +\"%Y-%m-%d %T\""

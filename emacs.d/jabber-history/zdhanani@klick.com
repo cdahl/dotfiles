@@ -1,0 +1,6 @@
+["2015-01-15T17:05:47Z" "in" "zdhanani@klick.com/Talk.v104BF9ACA30" "me" "hey"]
+["2015-01-15T17:05:50Z" "in" "zdhanani@klick.com/Talk.v104BF9ACA30" "me" "are you actively using qaprod01?"]
+["2015-01-15T17:10:10Z" "in" "zdhanani@klick.com/Talk.v104BF9ACA30" "me" "technically all the dev servers are internal only"]
+["2015-01-15T17:10:21Z" "in" "zdhanani@klick.com/Talk.v104BF9ACA30" "me" "so... yeah"]
+["2015-01-15T17:10:21Z" "in" "zdhanani@klick.com/Talk.v104BF9ACA30" "me" "it's gonna have to be patched"]
+["2015-01-15T18:40:00Z" "in" "zdhanani@klick.com/Talk.v104BF9ACA30" "me" "lol"]
