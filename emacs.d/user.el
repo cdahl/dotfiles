@@ -567,7 +567,7 @@ This function is only necessary in window system."
 (setq indent-guide-recursive t)
 (set-face-foreground 'indent-guide-face "#2b547e")
 (set-face-background 'indent-guide-face nil)
-
+(setq indent-guide-delay 0.2)
 (setq indent-guide-char "\u2502")
 
 
