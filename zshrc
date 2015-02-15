@@ -15,6 +15,7 @@ source $(brew --prefix)/etc/profile.d/autojump.sh #this should really have been 
 alias m="mvim"
 alias o="open"
 alias f="open ."
+alias a="ag"
 alias ra="rake"
 alias fl="|ag -S "
 alias G="|ag -S "
@@ -31,21 +32,26 @@ alias -g L="| less"
 alias -g M='| less'
 alias -g W='| wc -l'
 alias -g X='| xargs'
+alias -g P='| '
 
 alias zshrc='e ~/.zshrc' # Quick access to the ~/.zshrc file
 alias userel='e ~/.emacs.d/user.el' # Quick access to the ~/.zshrc file
 
 function fm {
-	noglob ag --smart-case -g "$@"|head -1 |xargs mvim
+  noglob ag --smart-case -g "$@"|head -1 |xargs e
 }
 
 function gitignore {
-	echo "$@" >> "./.gitignore"
-	git rm --cached $@
+  echo "$@" >> "./.gitignore"
+  git rm --cached $@
 }
 
 function xcode {
-	open
+  open 
+}
+
+function gcwhitespace {
+  git diff -w --no-color | git apply --cached --ignore-whitespace
 }
 
 ### cordova
@@ -106,8 +112,9 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 setopt append_history no_inc_append_history no_share_history
 
 # vi mode
-bindkey -v
-bindkey -M viins 'jk' vi-cmd-mode
+# bindkey -v
+# bindkey -M viins 'jk' vi-cmd-mode
+bindkey -e
 
 # use incremental search
 bindkey "^R" history-incremental-search-backward

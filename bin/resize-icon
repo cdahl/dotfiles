@@ -37,18 +37,12 @@ icons = [
     note: "iPhone spotlight results iPhone6+",
     type: :phone},
 
-  #General
-
-  { file_name: "Icon-40@3x.png",
-    size: "120x120",
-    note: "iPhone Spotlight results for retina display",
-    type: :iphone},
-
   { file_name: "Icon-60@2x.png",
     size: "120X120",
     note: "iPhone App Icon and Retina spotlight",
     type: :iphone},
-
+  
+  
   { file_name: "Icon-60@3x.png",
     size: "180x180",
     note: "iPhone App Icon for Retina display",
