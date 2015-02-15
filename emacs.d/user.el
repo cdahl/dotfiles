@@ -12,9 +12,16 @@
 ;; values in order to set the width (in characters wide) and height
 ;; (in lines high) Emacs will have whenever you start it
 
-(setq initial-frame-alist '((top . 0) (left . 0) (width . 150) (height . 80)))
-(setq default-frame-alist '((top . 0) (left . 0) (width . 150) (height . 80)))
+(setq initial-frame-alist '((top . 0) (left . 0) (width . 156) (height . 82)))
+(setq default-frame-alist '((top . 0) (left . 0) (width . 156) (height . 82)))
 
+;; font 
+(set-frame-font "Source Code Pro")
+(set-face-attribute 'default nil :height 140 :font "Source Code Pro Light")
+;; (set-face-attribute 'default nil :height 140 :font "Source Code Pro Regular")
+;;(set-face-attribute 'default nil :font "Anonymous")
+;;(set-face-attribute 'default nil :height 140 :font "Envy Code R")
+(set-face-attribute 'mode-line nil :height 150)
 
 ;; UTF-8 ALL THE THINGS!
 (prefer-coding-system 'utf-8)
@@ -40,6 +47,10 @@
 
 ;; show the menu bar
 (menu-bar-mode t)
+;; hide scrollbars
+(toggle-scroll-bar -1) 
+;; Just follow git-controlled links without asking
+(setq vc-follow-symlinks t)
 
 
 
@@ -50,6 +61,8 @@
 (set-face-attribute 'show-paren-match-face nil
                     :weight 'bold :underline nil :overline nil :slant 'normal) 
 (show-paren-mode 1)
+;; Highlight matching paren when it is visible, otherwise highlight the whole expression
+(setq show-paren-style 'mixed)
 
 
 ;; stronger colors
@@ -71,7 +84,6 @@
 ;; Flyspell often slows down editing so it's turned off
 ;;(remove-hook 'text-mode-hook 'turn-on-flyspell)
 
-(set-frame-font "Source Code Pro")
 
 
 
@@ -448,9 +460,22 @@ This function is only necessary in window system."
 ;;(require 'pry)
 
 ;; save all backups in one directory
-(setq backup-directory-alist '(("" . "~/.emacs.d/emacs-backup")))
-
-
+(defvar --backup-directory "~/.emacs-backups")
+(if (not (file-exists-p --backup-directory))
+    (make-directory --backup-directory t))
+(setq backup-directory-alist `(("." . ,--backup-directory)))
+(setq auto-save-file-name-transforms `((".*" ,--backup-directory t))) ;;autosave to backup dir too!
+(setq make-backup-files t               ; backup of a file the first time it is saved.
+      backup-by-copying t               ; don't clobber symlinks
+      version-control t                 ; version numbers for backup files
+      delete-old-versions t             ; delete excess backup files silently
+      delete-by-moving-to-trash t
+      kept-old-versions 6               ; oldest versions to keep when a new numbered backup is made (default: 2)
+      kept-new-versions 9               ; newest versions to keep when a new numbered backup is made (default: 2)
+      auto-save-default t               ; auto-save every buffer that visits a file
+      auto-save-timeout 20              ; number of seconds idle time before auto-save (default: 30)
+      auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
+      )
 ;; Place downloaded elisp files in this directory. You'll then be able
 ;; to load them.
 ;;
