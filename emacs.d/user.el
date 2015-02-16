@@ -12,16 +12,16 @@
 ;; values in order to set the width (in characters wide) and height
 ;; (in lines high) Emacs will have whenever you start it
 
-(setq initial-frame-alist '((top . 0) (left . 0) (width . 156) (height . 82)))
-(setq default-frame-alist '((top . 0) (left . 0) (width . 156) (height . 82)))
+(setq initial-frame-alist '((top . 0) (left . 0) (width . 156) (height . 83)))
+(setq default-frame-alist '((top . 0) (left . 0) (width . 156) (height . 83)))
 
 ;; font 
-(set-frame-font "Source Code Pro")
-(set-face-attribute 'default nil :height 140 :font "Source Code Pro Light")
+(set-frame-font "Source Code Pro Light")
+(set-face-attribute 'default nil :height 145 :font "Source Code Pro Light")
 ;; (set-face-attribute 'default nil :height 140 :font "Source Code Pro Regular")
 ;;(set-face-attribute 'default nil :font "Anonymous")
 ;;(set-face-attribute 'default nil :height 140 :font "Envy Code R")
-(set-face-attribute 'mode-line nil :height 150)
+(set-face-attribute 'mode-line nil :height 160)
 
 ;; UTF-8 ALL THE THINGS!
 (prefer-coding-system 'utf-8)
