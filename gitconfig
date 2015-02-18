@@ -5,6 +5,7 @@
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort    # list all aliases
 	a        = add
 	aa       = add -A :/
+        anw = !sh -c 'git diff -w --no-color "$@" | git apply --cached --ignore-whitespace' - #add non-whitespace changes
 	amend    = commit --verbose --amend    # Edit the last commit
 	b        = branch
 	br       = branch -r
@@ -46,6 +47,7 @@
 	reha = reset --hard
 	cleanfd = clean -fd
 	unmerged-branches = branch --no-merged
+	addnw = !sh -c \"git diff -w --no-color '$@'| git apply --cached --ignore-whitespace\"
 
 [core]
 	excludesfile = ~/.gitignore_global
@@ -74,3 +76,5 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[apply]
+	whitespace = nowarn
