@@ -52,7 +52,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = false
-	editor = 'vim'
+	editor = 'e'
 	ignorecase = false
 	
 

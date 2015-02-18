@@ -7,7 +7,8 @@ source $ZSH/oh-my-zsh.sh
 #   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 # fi
 
-source /usr/local/etc/autojump.zsh #this should really have been in the dictionay
+source $(brew --prefix)/etc/profile.d/autojump.sh #this should really have been in the dictionay
+
 
 # !!! search and replace: ag Deafult -l|xargs sed -i '' 's/Deafult/Default/g'
 
@@ -111,8 +112,9 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 setopt append_history no_inc_append_history no_share_history
 
 # vi mode
-bindkey -v
-bindkey -M viins 'jk' vi-cmd-mode
+# bindkey -v
+# bindkey -M viins 'jk' vi-cmd-mode
+bindkey -e
 
 # use incremental search
 bindkey "^R" history-incremental-search-backward

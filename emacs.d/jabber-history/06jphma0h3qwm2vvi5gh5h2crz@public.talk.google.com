@@ -1,8 +1,0 @@
-["2015-01-20T14:57:20Z" "out" "me" "06jphma0h3qwm2vvi5gh5h2crz@public.talk.google.com" "Hi Riley"]
-["2015-01-20T14:57:26Z" "out" "me" "06jphma0h3qwm2vvi5gh5h2crz@public.talk.google.com" "you're going to Blair's thing tonight?"]
-["2015-01-20T15:54:04Z" "in" "06jphma0h3qwm2vvi5gh5h2crz@public.talk.google.com/lcsw_hangouts8663C2CF" "me" "Hey Max  :-) not sure if I'll be able to make it, he said it's from 5-7"]
-["2015-01-20T15:56:19Z" "out" "me" "06jphma0h3qwm2vvi5gh5h2crz@public.talk.google.com" "He also said people probably won't come before 6 :)"]
-["2015-01-20T15:56:30Z" "out" "me" "06jphma0h3qwm2vvi5gh5h2crz@public.talk.google.com" "I'll leave here after work (5:30) and then go there"]
-["2015-01-20T15:59:23Z" "in" "06jphma0h3qwm2vvi5gh5h2crz@public.talk.google.com/lcsw_hangouts8663C2CF" "me" "Oh nice  :-) I showed up to work late so I'm going to stay later (probably 6:30 or 7) so if it ends at 7 I won't be able to make it. But sometimes these things go later, and if it looks like it's gonna go til 8 or 9 I might come by. I also found out this morning it's sort of a dressy event and I'd don't know what clothes I have clean for it"]
-["2015-01-20T15:59:39Z" "in" "06jphma0h3qwm2vvi5gh5h2crz@public.talk.google.com/lcsw_hangouts8663C2CF" "me" "Also I don't have a ticket lol"]
-["2015-01-20T16:00:33Z" "in" "06jphma0h3qwm2vvi5gh5h2crz@public.talk.google.com/lcsw_hangouts8663C2CF" "me" "But he tells me I could probably get in anyways"]

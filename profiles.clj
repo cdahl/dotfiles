@@ -1,15 +1,15 @@
 {:user 
- {:dependencies [[org.clojars.gjahad/debug-repl "0.3.3"]
-                 [im.chit/vinyasa "0.2.2"]
-                 [difform "1.1.2"]]
-  :injections [(require 'vinyasa.inject)
-               (require 'alex-and-georges.debug-repl)
-               (require 'com.georgejahad.difform)
+ {:dependencies [#_[org.clojars.gjahad/debug-repl "0.3.3"]
+                 #_[im.chit/vinyasa "0.2.2"]
+                 #_[difform "1.1.2"]]
+  :injections [#_(require 'vinyasa.inject)
+               #_(require 'alex-and-georges.debug-repl)
+               #_(require 'com.georgejahad.difform)
                #_(vinyasa.inject/inject 'clojure.core '>
-                                      '[[clojure.repl doc source]
-                                        [clojure.pprint pprint pp]
-                                        [alex-and-georges.debug-repl debug-repl]
-                                        [com.georgejahad.difform difform]])]
+                                        '[[clojure.repl doc source]
+                                          [clojure.pprint pprint pp]
+                                          [alex-and-georges.debug-repl debug-repl]
+                                          [com.georgejahad.difform difform]])]
   :plugins [[lein-try "0.4.3"] ; try packages
             [cider/cider-nrepl "0.8.2"]
             [lein-ancient "0.5.5"] ; find outdated packages
