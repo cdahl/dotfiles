@@ -367,6 +367,10 @@ Position the cursor at it's beginning, according to the current mode."
 
 (global-set-key (kbd "C-x \\") 'window-toggle-split-direction)
 
+;;move focus to newly split frame after creation
+(global-set-key "\C-x2" (lambda () (interactive)(split-window-vertically) (other-window 1)))
+(global-set-key "\C-x3" (lambda () (interactive)(split-window-horizontally) (other-window 1)))
+
 (windmove-default-keybindings) ;Then you can use SHIFT+arrow to move to the next adjacent window in the specified direction.
 
 ;;move border!

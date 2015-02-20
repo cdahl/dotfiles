@@ -37,7 +37,7 @@ alias -g P='| '
 alias zshrc='e ~/.zshrc' # Quick access to the ~/.zshrc file
 alias userel='e ~/.emacs.d/user.el' # Quick access to the ~/.zshrc file
 
-function fm {
+function fe {
   noglob ag --smart-case -g "$@"|head -1 |xargs e
 }
 
