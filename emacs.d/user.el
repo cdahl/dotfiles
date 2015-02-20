@@ -102,6 +102,8 @@
 (require 'evil)
 (evil-mode 1)
 
+(setq evil-symbol-word-search t) ;; evil search for symbols (include underscores) instead of word
+
 ;; jk to get out of insert mode
 (require 'key-chord)
 (key-chord-mode 1)
