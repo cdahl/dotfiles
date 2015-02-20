@@ -11,8 +11,9 @@ hi -a Hint font-size: 9pt !important;
 
 
 " Console toggle
-nmap -builtin <c-g> <m-a-k><esc>
-imap -builtin <c-g> <esc><m-a-k><esc>
+nmap -builtin <c-g> <m-a-i><esc>
+imap -builtin <c-g> <esc><m-a-i><esc>
+
 
 "
 set findcase=smart
