@@ -3,6 +3,7 @@
 
 [alias]
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort    # list all aliases
+        alias = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort    # list all aliases
 	a        = add
 	aa       = add -A :/
         anw = !sh -c 'git diff -w --no-color "$@" | git apply --cached --ignore-whitespace' - #add non-whitespace changes
