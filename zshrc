@@ -7,8 +7,10 @@ source $ZSH/oh-my-zsh.sh
 #   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 # fi
 
-source $(brew --prefix)/etc/profile.d/autojump.sh #this should really have been in the dictionay
-
+#source $(brew --prefix)/etc/profile.d/autojump.sh #this should really have been in the dictionay
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+""
+alias cic="http http://www.cic.gc.ca/english/work/iec/data.xml | xpath \"//country[@location='Germany' and @category='wh']\""
 
 # !!! search and replace: ag Deafult -l|xargs sed -i '' 's/Deafult/Default/g'
 
@@ -65,7 +67,6 @@ alias cplr="cordova plugin remove"
 alias adbcordova="noglob adb logcat CordovaLog:V *:S"
 alias simlog="noglob tail -f $HOME/Library/Logs/iOS\ Simulator/$(cut -d/ -f7 <<< $(ps ax|grep "iPhone Simulator/"|grep app))/system.log"
 alias apkinfo="aapt dump badging"
-
 
 alias gmtdate="date -u  +\"%Y-%m-%d %T\""
 
