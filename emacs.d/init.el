@@ -35,7 +35,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("579e9950513524d8739e08eae289419cfcb64ed9b7cc910dd2e66151c77975c4" "42ac06835f95bc0a734c21c61aeca4286ddd881793364b4e9bc2e7bb8b6cf848" "9e8becc2a4bb439855e49fbee863781dc5c4a5837d4508aa8fed47eb09b5fb2d" "f99f1105401cd92f1e3b6e9fd1fa3dafeac65847927b8f5e65984745d87385d4" "fdadd12f742200be37181eee89f11ec725e98dcbe439afda054fe4be47401240" "b10159307e655d6c3888df23c36e4f1cd970bb5cd477335637317dc8d1bb2358" "1f240eda4b53091a3ef08629fc0c8b37d4d62de474299736d7cc8bbc82a0350c" default)))
+    ("4e262566c3d57706c70e403d440146a5440de056dfaeb3062f004da1711d83fc" "35b526231c23f558b76fe27307d424111dcadf24465c80c3bf40a7de49410b74" "579e9950513524d8739e08eae289419cfcb64ed9b7cc910dd2e66151c77975c4" "42ac06835f95bc0a734c21c61aeca4286ddd881793364b4e9bc2e7bb8b6cf848" "9e8becc2a4bb439855e49fbee863781dc5c4a5837d4508aa8fed47eb09b5fb2d" "f99f1105401cd92f1e3b6e9fd1fa3dafeac65847927b8f5e65984745d87385d4" "fdadd12f742200be37181eee89f11ec725e98dcbe439afda054fe4be47401240" "b10159307e655d6c3888df23c36e4f1cd970bb5cd477335637317dc8d1bb2358" "1f240eda4b53091a3ef08629fc0c8b37d4d62de474299736d7cc8bbc82a0350c" default)))
  '(jit-lock-defer-time 0.05)
  '(linum-delay t)
  '(recentf-mode t)
@@ -48,3 +48,4 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "gray15" :foreground "#e0e2e4" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :foundry "nil" :family "Source Code Pro"))))
  '(evil-search-highlight-persist-highlight-face ((t (:background "yellow1" :foreground "black")))))
+(put 'narrow-to-region 'disabled nil)

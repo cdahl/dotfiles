@@ -1,0 +1,41 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/mgerlach/work/commander-editor/" . "tests/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/tmp/"
+ "/Users/mgerlach/work/commander-editor/tests/"
+ "/Users/mgerlach/work/commander-editor/helpers/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "gitflow.txt"
+ "git-test.js"
+ "git-test.rb"
+ "git.js"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/tmp/" (21740 50530 0 0) "steam_chrome_shmem" "KSOutOfProcessFetcher.501.OlaJUhhgKAnFsX7fZ0FyXTFxIgg=/" "gitflow.txt" "git-test-repo-somewhere-else/" "git-test-repo-origin/" "git-test-repo-editor/" "com.apple.launchd.ZemwXphG2g/" "com.apple.launchd.UnQzFn0xNJ/" "com.apple.launchd.ThuydRpnd1/" "com.apple.launchd.qsxuxpbdGd/" "com.apple.launchd.ORxtKCdaKk/" "com.apple.launchd.n6iPjxfB9S/" "com.apple.launchd.KapBv5rE6W/" "com.apple.launchd.4VBIc7qESD/" "com.apple.CoreSimulator.SimDevice.C3423FC2-B24B-44EB-91C1-242522B37CCD.launchd_sim/" "com.apple.CoreSimulator.SimDevice.9A1D92A5-180A-46EB-B097-417CB9494B00.launchd_sim/" "com.apple.CoreSimulator.SimDevice.80A7F4FF-090D-4439-8A8E-CB8CEEFCD925.launchd_sim/" "com.apple.CoreSimulator.SimDevice.293BC7AE-D5C8-4B7C-A17A-5C036C24CC4E.launchd_sim/" ".s.PGSQL.5432.lock" ".s.PGSQL.5432" ".gitcredentials" "../" "./")
+
+ ("/Users/mgerlach/work/commander-editor/helpers/" (21740 50628 0 0) "tagger.js" "siteurl_to_path.js" "git.js" "../" "./")
+
+ ("/Users/mgerlach/work/commander-editor/tests/" (21740 43525 0 0) "git-test.rb" "../" "./")
+
+ ("/Users/mgerlach/work/com.dileep.plugins.datepicker/" (21604 50805 0 0) "www/" "src/" "README.md" "plugin.xml" "LICENSE" ".git/" ".DS_Store" "../" "./")
+
+ ("/Users/mgerlach/work/commander-editor/" (21740 39017 0 0) "tests/" "state/" "routes.js" "Readme.md" "package.json" "helpers/" "controllers/" "app.js" "_config.js" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/mgerlach/work/" (21735 33061 0 0) "Webview-For-Andrew/" "web/" "vendingMachinePortal/" "TSMiniWebBrowser/" "thirdpartystuff/" "telus-mobile-learning-conflict/" "telus-mobile-learning/" "Telus stuff/" "SoloComponents-iOS/" "scout-linkedin/" "salixisalesforceirepbatchdownloader/" "salix-video-test/" "salix-repos/" "salix-fieldguide-webservice-compile/" "salix-fieldguide/" "ruby-appdevtest/" "Reports/" "QA-mobile-website/" "phonegap-alertdialoglist-plugin/" "novartis-signature-clinical-trials/" "novartis-ascend-LDK378-clinical-trials/" "ndk-10.2.0-workspace/" "millennium-velcadehcp/" "millennium-velcade-ipad-ipatient/" "millennium-usma-ipad-vrap/" "millennium-ipad-managedmarkets-nam/" "millennium-ipad-managedmarkets-bim/" "millenium stuff/" "marketing_platform/" "lotsa_commits/" "lmttfy/" "Libraries/" "learning/" "KWTransition/" "koi-mobile-presentation-framework/" "KlickTimer/" "klickstalker-ios/" "klick-technical-tests/" "Klick-TALInT/" "klick-screenshot-maker/" "klick-qasignout/" "klick-qa-tools/" "klick-projectk/" "klick-mvc-smartsite-cms/" "klick-mvc-smartsite/" "klick-koi-tools/" "klick-ipad-iconnect-welcome/" "klick-ipad-iconnect-enhance/" "klick-ipad-common/" "klick-ios-tools/" "klick-hallway-monitors/" "klick-genome-extensions/" "junk/" "IntuitiveSurgical-PriceAuthenticator/" "HTMLPresentation/" "githubrepos/" "external libs/" "experiments/" "examples/" "dataImporTestProject/" "cordova-plugin-local-notifications/" "cordova-plugin-email-composer/" "cordova-android-listview-alert/" "commander-editor/" "com.dileep.plugins.datepicker/" "bump_version_no/" "beatbleedsTNG-website/" "beatbleedslegacydata-plugin/" "beatbleeds psd/" "baxter-iconnect-enhance/" "baxter-beatbleeds-nextgeneration/" "baxter-beatbleeds/" "Archive/" "add_analytics_to_html_strings.rb" ".DS_Store" "../" "./")
+
+ ("/Users/mgerlach/" (21740 41192 0 0) "work/" "tmp/" "s3curl.pl" "Public/" "postgrewsql-tunnel.pl" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "dotfiles/" "Documents/" "Desktop/" "bin/" "Applications/" ".zshrc" ".zsh_history" ".zsh-update" ".zcompdump-Maximilian’s MacBook Pro-5.0.5" ".zcompdump-Maximilian’s MacBook Pro (8)-5.0.5" ".zcompdump-Maximilian’s MacBook Pro (7)-5.0.5" ".zcompdump-Maximilian’s MacBook Pro (6)-5.0.5" ".zcompdump-Maximilian’s MacBook Pro (5)-5.0.5" ".zcompdump-Maximilian’s MacBook Pro (4)-5.0.5" ".zcompdump-Maximilian’s MacBook Pro (3)-5.0.5" ".zcompdump-Maximilian’s MacBook Pro (2)-5.0.5" ".xvimrc" ".wolfram_api_key" ".vimrc.local" ".vimrc.bundles.local" ".vimrc.bundles" ".vimrc" ".vimperator/" ".viminfo" ".vim/" ".Trash/" ".tmux.conf.local" ".tmux.conf" ".subversion/" ".ssh/" ".sqlite_history" ".s3curl" ".python27_compiled/" ".pry_history" ".profiles.clj" ".pow/" ".pip/" ".pentadactylrc" ".oh-my-zsh/" ".npm/" ".node-gyp/" ".maximum-awesome/" ".matplotlib/" ".magick/" ".m2/" ".local/" ".lldb/" ".lesshst" ".lein/" ".jshintrc" ".jabberpasswd" ".jabber/" ".hy-history" ".hushlogin" ".httpie/" ".gitconfig.local" ".gitconfig" ".Genymobile/" ".gem/" ".emacs.d/" ".emacs-backups/" ".dyci/" ".DS_Store" ".dropbox/" ".drip/" ".cups/" ".ctags" ".cordova/" ".config/" ".cocoapods/" ".CFUserTextEncoding" ".cache/" ".brew_list" ".brew-install" ".bashrc" ".bash_profile" ".bash_history" ".android/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
