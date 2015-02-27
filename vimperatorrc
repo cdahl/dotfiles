@@ -1,14 +1,19 @@
 "Misc
-:map jk <Esc>
+map jk <Esc>
+cmap jk <Esc>
+inoremap jk <Esc>
+inoremap kj <Esc>
+
+map <C-g> <Esc>
+inoremap <C-g> <esc>
+noremap <C-g> <esc>
+cmap <C-g> <esc>
 
 set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
 
 "Scroll
-"map -count -description='Scrolls 6 lines Down.' -modes=n j <count>8j
-"map -count -description='Scrolls 6 lines UP' -modes=n k <count>8k
-
-noremap j 5j
-noremap k 5k
+noremap j 10j
+noremap k 10k
 noremap J <C-d>
 noremap K <C-u> 
 
@@ -38,23 +43,11 @@ set smartcase
 " a toggle for search highlight
 map <silent> <leader>. :set hlsearch!<CR>
 
-" Make the RSS feed icon show in the vimperator status bar
-" javascript <<EOF
-" (function(){
-" var feedPanel = document.createElement("statusbarpanel");
-" feedPanel.setAttribute("id", "feed-panel-clone");
-" feedPanel.appendChild(document.getElementById("feed-button"));
-" feedPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
-" document.getElementById("status-bar").insertBefore(feedPanel, document.getElementById("security-button"));
-" })();
-
-
 
 " Console toggle
-nmap <c-g> <m-a-k><esc>
-imap <c-g> <esc><m-a-k><esc>
+nmap <c-c> <m-a-i><esc>
+imap <c-c> <esc><m-a-i><esc>
 
-"
 "set findcase=smart
 
 map ,s :so ~/.vimperatorrc<CR> 
@@ -70,5 +63,7 @@ command! rss -description "RSS feed for page" open javascript:window.open(docume
 nmap ,p :pocket<CR>
 nmap ,m :mail<CR>
 nmap ,r :rss:<CR>
+
+echo "vimperatorrc sourced"
 
 " vim: set ft=vim
