@@ -609,6 +609,15 @@ This function is only necessary in window system."
 (setq scroll-margin 2)
 
 ;; ================================================================================
+
+;;web mode file association
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.htm?\\'" . web-mode))
+
+(require 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js?\\'" . js2-mode))
+
 ;; html-encode
 ;; http://emacs.stackexchange.com/questions/8166/encode-non-html-characters-to-html-equivalent
 
