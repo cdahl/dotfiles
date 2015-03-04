@@ -9,8 +9,8 @@ source $ZSH/oh-my-zsh.sh
 
 #source $(brew --prefix)/etc/profile.d/autojump.sh #this should really have been in the dictionay
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-""
-alias cic="http http://www.cic.gc.ca/english/work/iec/data.xml | xpath \"//country[@location='Germany' and @category='wh']\""
+
+alias cic="http http://www.cic.gc.ca/english/work/iec/data.xml | xpath \"//country[@location='Germany' and @category='wh']\"|grep -v \"<criteria>\""
 
 # !!! search and replace: ag Deafult -l|xargs sed -i '' 's/Deafult/Default/g'
 

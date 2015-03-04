@@ -197,6 +197,14 @@ Position the cursor at it's beginning, according to the current mode."
 (setq evil-visual-state-cursor 'hollow)
 (setq evil-replace-state-cursor 'box)
 
+;; Make movement keys work like they should
+(define-key evil-normal-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+(define-key evil-normal-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+(define-key evil-motion-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+(define-key evil-motion-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+; Make horizontal movement cross lines                                    
+(setq-default evil-cross-lines t)
+
 
 ;; Window moving
 (define-key evil-normal-state-map (kbd "C-w <left>") 'windmove-left)
@@ -204,6 +212,15 @@ Position the cursor at it's beginning, according to the current mode."
 (define-key evil-normal-state-map (kbd "C-w <up>") 'windmove-up)
 (define-key evil-normal-state-map (kbd "C-w <down>") 'windmove-down)
 
+; using the meta key to jump between windows
+(global-set-key (kbd "M-0") 'delete-window)
+(global-set-key (kbd "M-1") 'delete-other-windows)
+(global-set-key (kbd "M-2") 'split-window-vertically)
+(global-set-key (kbd "M-3") 'split-window-horizontally)
+(global-set-key (kbd "M-o") 'other-window)
+
+; using the C-b to jump between windows
+(global-set-key (kbd "C-b") 'switch-to-buffer)
 
 
 ;; Statusbar colour depending on mode (evil/emacs/buffer modified)
@@ -285,6 +302,7 @@ Position the cursor at it's beginning, according to the current mode."
 
 (evil-define-key 'normal cider-mode (kbd "s-i") 'cider-doc)
 (evil-define-key 'insert cider-mode (kbd "s-i") 'cider-doc)
+
 
 
 ;; Clojure-Refactor
@@ -910,5 +928,13 @@ This function is only necessary in window system."
   "Do a `find-file' with the `ns-input-file' as argument; staying in frame."
   (interactive)
   (let ((ns-pop-up-frames nil))
-    (ns-find-file)))
+    (ns-find-)))
 
+
+;;-------------------- Comint
+
+                                        ; scroll when running code
+(setq comint-prompt-read-only nil)
+(setq comint-scroll-to-bottom-on-input t)
+(setq comint-scroll-to-bottom-on-output t)
+(setq comint-move-point-for-output t)
