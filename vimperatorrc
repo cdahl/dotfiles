@@ -1,8 +1,8 @@
 "Misc
-map jk <Esc>
-cmap jk <Esc>
-inoremap jk <Esc>
-inoremap kj <Esc>
+" map jk <Esc>
+" cmap jk <Esc>
+" inoremap jk <Esc>
+" inoremap kj <Esc>
 
 map <C-g> <Esc>
 inoremap <C-g> <esc>
@@ -12,10 +12,10 @@ cmap <C-g> <esc>
 set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
 
 "Scroll
-noremap j 10j
-noremap k 10k
+" noremap j 10j
+" noremap k 10k
 noremap J <C-d>
-noremap K <C-u> 
+" noremap K <C-u> 
 
 "keyboard hints
 "set hintkeys=asdflkj
